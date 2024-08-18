@@ -1,4 +1,3 @@
-import { CustomerField } from '@/app/lib/definitions';
 import Link from 'next/link';
 import {
   CheckIcon,
@@ -8,7 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
 
-export default function Form({ customers }: { customers: CustomerField[] }) {
+export default function Form() {
   return (
     <form>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
@@ -17,7 +16,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           <label htmlFor="customer" className="mb-2 block text-sm font-medium">
             Choose customer
           </label>
-          <div className="relative">
+          {/* <div className="relative">
             <select
               id="customer"
               name="customerId"
@@ -34,7 +33,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
               ))}
             </select>
             <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
-          </div>
+          </div> */}
         </div>
 
         {/* Invoice Amount */}
