@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { UpdateFood, DeleteFood } from '@/app/ui/foods/buttons';
-import { formatDateToLocal, formatCurrency } from '@/app/lib/utils';
 import { fetchFilteredFoods } from '@/app/lib/data';
 
 export default async function FoodsTable({
@@ -73,7 +72,7 @@ export default async function FoodsTable({
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
                       <UpdateFood id={food.id} />
-                      <DeleteFood id={food.id} />
+                      <DeleteFood id={food.id} foodName={food.name} />
                     </div>
                   </td>
                 </tr>

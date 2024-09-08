@@ -1,6 +1,9 @@
+"use client";
+
 import { PencilIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { deleteFood } from '@/app/lib/actions';
+import { Button } from '../button';
 
 export function CreateFood() {
   return (
@@ -25,13 +28,18 @@ export function UpdateFood({ id }: { id: string }) {
   );
 }
 
-export function DeleteFood({ id }: { id: string }) {
-  const deleteFoodWithId = deleteFood.bind(null, id);  return (
-    <form action={deleteFoodWithId}>
-      <button className="rounded-md border p-2 hover:bg-gray-100">
-        <span className="sr-only">Delete</span>
-        <TrashIcon className="w-5" />
-      </button>
-    </form>
+export function DeleteFood({ id, foodName }: { id: string, foodName: string }) {
+  function handleClick() {
+    const isConfirmed = confirm(`Delete food ${foodName}?`)
+    if (isConfirmed) {
+      deleteFood(id)
+    }
+  }
+
+  return (
+    <Button className="rounded-md border p-2 hover:bg-gray-100" onClick={handleClick}>
+      <span className="sr-only">Delete</span>
+      <TrashIcon className="w-5" />
+    </Button>
   );
 }
