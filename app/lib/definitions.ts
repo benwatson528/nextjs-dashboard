@@ -8,7 +8,6 @@ export type Foods = {
   description: string;
   category: string;
   notes: string;
-  portion_size: number;
   calories: number;
   carbs: number;
   protein: number;

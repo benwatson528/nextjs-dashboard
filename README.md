@@ -7,9 +7,9 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
 
 ## Overview for meal plan
 Schemas:
- - Foods - id, name, description, category?, notes, portion_size, calories, carbs, protein, fat, sugar
+ - Foods - id, name, description, category?, notes, calories, carbs, protein, fat, sugar
  - Meals - id, name, description, notes, is_active
- - Foods/Meals link - meal_id, food_id, portions_multiplier
+ - Foods/Meals link - meal_id, food_id, portion_multiplier
  - Rotas - id, name, description, notes, is_active
  - Rotas/Meals link - rota_id, meal_id
 

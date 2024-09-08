@@ -12,7 +12,6 @@ async function seedFood() {
       description TEXT NOT NULL,
       category VARCHAR(255) NOT NULL,
       notes TEXT NOT NULL,
-      portion_size INT NOT NULL,
       calories INT NOT NULL,
       carbs INT NOT NULL,
       protein INT NOT NULL,
@@ -24,9 +23,9 @@ async function seedFood() {
   const insertedFoods = await Promise.all(
     foods.map(async (food) => {
       return client.sql`
-        INSERT INTO foods (id, name, description, category, notes, portion_size, calories, carbs, protein, fat, sugar)
+        INSERT INTO foods (id, name, description, category, notes, calories, carbs, protein, fat, sugar)
         VALUES (${food.id}, ${food.name}, ${food.description},
-        ${food.category}, ${food.notes}, ${food.portion_size}, ${food.calories}, ${food.carbs},
+        ${food.category}, ${food.notes}, ${food.calories}, ${food.carbs},
         ${food.protein}, ${food.fat}, ${food.sugar})
         ON CONFLICT (id) DO NOTHING;
       `;
